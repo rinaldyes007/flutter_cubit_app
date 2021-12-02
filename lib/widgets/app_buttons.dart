@@ -13,7 +13,7 @@ class AppButtons extends StatelessWidget {
 
   AppButtons(
       {this.isIcon = false,
-      this.text,
+      this.text = 'hi',
       this.icon,
       required this.color,
       required this.backgroundColor,
@@ -31,13 +31,17 @@ class AppButtons extends StatelessWidget {
           color: backgroundColor,
         ),
         child: isIcon == false
-            ? AppText(
-                text: text.toString(),
-                color: Colors.black,
+            ? Center(
+                child: AppText(
+                  text: text.toString(),
+                  color: color,
+                ),
               )
-            : Icon(
-                icon,
-                color: color,
+            : Center(
+                child: Icon(
+                  icon,
+                  color: color,
+                ),
               ));
   }
 }
